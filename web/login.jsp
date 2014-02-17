@@ -1,6 +1,6 @@
 <%@ page import ="java.sql.*" %>
 <%
-    String userid = request.getParameter("uname");
+    String userid = request.getParameter("uname");   
     String pwd = request.getParameter("pass");
     Class.forName("com.mysql.jdbc.Driver");
     Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/users", "dimitris", "1234");
@@ -11,7 +11,8 @@
         session.setAttribute("userid", userid);
         //out.println("welcome " + userid);
         //out.println("<a href='logout.jsp'>Log out</a>");
-        response.sendRedirect("success.jsp");
+        response.sendRedirect("calendar.jsp");
     } else {
         out.println("Invalid password <a href='index.jsp'>try again</a>");
-    }%>
+    }
+%>
